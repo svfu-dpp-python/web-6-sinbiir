@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+
+        <div class="todos">
+            <div class="todo" v-for="todo in todos">
+                <img v-bind:src="'images/' + todo.img" alt="">
+                <h3>{{ todo.text }}</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    var demo = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!',
+            todos: [
+                { text: 'Learn JavaScript', img: 'js.jpg' },
+                { text: 'Learn Vue.js', img: 'vue.jpg' },
+                { text: 'Build Something Awesome', img: 'awesome.jpg' }
+            ]
+        }
+    })
+
+</script>
+
+</html>
